@@ -1,0 +1,32 @@
+﻿<Window x:Class="Complex_calc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Complex_calc"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" Background="DarkBlue">
+    <Grid>
+
+        <TextBox Name="lhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="70,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox Name="lhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="226,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" TextChanged="lhs_imag_TextChanged"/>
+        <TextBox x:Name="rhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="506,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="rhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="646,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox Name="result_LH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="385,366,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox Name="result_RH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="525,366,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="70,106,0,0" TextWrapping="Wrap" Text="Realteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red" />
+        <TextBlock HorizontalAlignment="Left" Margin="226,106,0,0" TextWrapping="Wrap" Text="Imaginärteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Margin="506,102,0,0" TextWrapping="Wrap" Text="Realteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red" />
+        <TextBlock HorizontalAlignment="Left" Margin="646,104,0,0" TextWrapping="Wrap" Text="Imaginärteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Margin="385,417,0,0" TextWrapping="Wrap" Text="Ergebnis" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Margin="525,417,0,0" TextWrapping="Wrap" Text="Grad" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
+
+        <Button Name="btn_add" Content="Add" HorizontalAlignment="Left" Margin="70,236,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_add" Background="#FFFFF7F0" Grid.ColumnSpan="2"/>
+        <Button Name="btn_sub" Content="Subtract" HorizontalAlignment="Left" Margin="70,300,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_sub" Grid.ColumnSpan="2"/>
+        <Button Name="btn_multi" Content="Multiply" HorizontalAlignment="Left" Margin="70,356,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_multi" Grid.ColumnSpan="2"/>
+        <Button Name="btn_div" Content="Divide" HorizontalAlignment="Left" Margin="70,417,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_div" Grid.ColumnSpan="2"/>
+        <Button Name="AC" Content="AC/C" HorizontalAlignment="Left" Margin="76,185,0,0" VerticalAlignment="Top" Width="50" Height="30" Click="Button_Click_AC"/>
+    </Grid>
+</Window>
