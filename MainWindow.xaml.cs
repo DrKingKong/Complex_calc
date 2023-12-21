@@ -60,10 +60,8 @@ namespace Complex_calc
             Complex rhs = new Complex(double.Parse(rhs_real.Text), double.Parse(rhs_imag.Text));
             Complex div = new();
             div=lhs/rhs;
-            result_LH.Text = div.Re.ToString();
-            result_RH.Text = div.Im.ToString();
-
-
+            result_LH.Text = div.B.ToString();
+            result_RH.Text = div.W.ToString();
         }
 
         private void Button_Click_AC(object sender, RoutedEventArgs e)
@@ -76,25 +74,6 @@ namespace Complex_calc
             rhs_real.Text = "0";
         }
 
-        private void lhs_imag_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void lhs_real_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void result_LH_B_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void result_RH_W_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 
 
