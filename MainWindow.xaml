@@ -8,7 +8,7 @@
         Title="MainWindow" Height="600" Width="800" Background="DarkBlue">
     <Grid>
 
-        <TextBox Name="lhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="70,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        <TextBox Name="lhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="70,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" TextChanged="lhs_real_TextChanged"/>
         <TextBox Name="lhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="226,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" TextChanged="lhs_imag_TextChanged"/>
         <TextBox x:Name="rhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="506,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
         <TextBox x:Name="rhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="646,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
