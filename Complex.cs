@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace Complex_calc
 {
@@ -57,21 +58,21 @@ namespace Complex_calc
         //    RE = Math.Round(step1.RE / step2.RE, 2);
         //    IM = Math.Round(step1.IM / step2.RE, 2);
         //}
-        
+
         private double mRe, mIm;
         private double mB, mW;
         public Complex() { }
         public Complex(double re, double im)
-            {
-                Re = re;
-                Im = im;
-            }
+        {
+            Re = re;
+            Im = im;
+        }
         public override string ToString()
         {
             if (mIm >= 0)
                 return $"{mRe} + j{mIm}";
             else
-                return $"{mRe} + j{mIm}";
+                return $"{mRe} - j{mIm}";
         }
 
         public double Re
@@ -108,15 +109,15 @@ namespace Complex_calc
 
         public double B
         {
-            get 
-            { 
+            get
+            {
                 return mB;
             }
             set
             {
-                if(value!=mB)
+                if (value != mB)
                 {
-                    mB= value;
+                    mB = value;
                 }
                 PolarToKarth();
             }
@@ -138,15 +139,16 @@ namespace Complex_calc
             }
         }
 
+
         private void KarthToPolar()
         {
-            mB=Math.Sqrt(mRe*mRe+mIm* mIm);
-            mW=Math.Atan2(mIm,mRe);
+            mB=Math.Sqrt(mRe*mRe+mIm*mIm);
+            mW = Math.Atan2(mIm, mRe);
         }
         private void PolarToKarth()
         {
             mRe=mB*Math.Cos(mW);
-            mIm=mB+Math.Sin(mW);
+            mIm=mB*Math.Sin(mW);
         }
         public double Wdeg
         {
@@ -157,6 +159,7 @@ namespace Complex_calc
             set
             {
                 mW = value * Math.PI / 180.0;
+                PolarToKarth();
             }
         }
         public static Complex operator + (Complex lhs, Complex rhs)
@@ -173,18 +176,18 @@ namespace Complex_calc
             tmp.Im = lhs.Im - rhs.Im;
             return tmp;
         }
-        public static Complex operator *(Complex lhs, Complex rhs)
+        public static Complex operator * (Complex lhs, Complex rhs)
         {
             Complex tmp = new();
-            tmp.Re = lhs.B * rhs.B;
-            tmp.Im = lhs.W + rhs.W;
+            tmp.B = lhs.B * rhs.B;
+            tmp.W = lhs.W + rhs.W;
             return tmp;
         }
-        public static Complex operator /(Complex lhs, Complex rhs)
+        public static Complex operator / (Complex lhs, Complex rhs)
         {
             Complex tmp = new();
-            tmp.Re = lhs.B / rhs.B;
-            tmp.Im = lhs.W - rhs.W;
+            tmp.B = lhs.B / rhs.B;
+            tmp.W = lhs.W - rhs.W;
             return tmp;
         }
 

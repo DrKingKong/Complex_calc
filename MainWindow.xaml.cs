@@ -35,31 +35,31 @@ namespace Complex_calc
 
         private void Button_Click_sub(object sender, RoutedEventArgs e)
         {
-            Complex slhs = new Complex(double.Parse(lhs_real.Text), double.Parse(lhs_imag.Text));
-            Complex srhs = new Complex(double.Parse(rhs_real.Text), double.Parse(rhs_imag.Text));
+            Complex sub_lhs = new Complex(double.Parse(lhs_real.Text), double.Parse(lhs_imag.Text));
+            Complex sub_rhs = new Complex(double.Parse(rhs_real.Text), double.Parse(rhs_imag.Text));
             Complex diff = new();
-            diff=slhs-srhs;
+            diff=sub_lhs-sub_rhs;
             result_LH.Text = diff.Re.ToString();
             result_RH.Text = diff.Im.ToString();
         }
 
         private void Button_Click_multi(object sender, RoutedEventArgs e)
         {
-            Complex lhs = new Complex(double.Parse(lhs_real.Text), double.Parse(lhs_imag.Text));
-            Complex rhs = new Complex(double.Parse(rhs_real.Text), double.Parse(rhs_imag.Text));
+            Complex multi_lhs = new Complex(double.Parse(lhs_real.Text), double.Parse(lhs_imag.Text));
+            Complex multi_rhs = new Complex(double.Parse(rhs_real.Text), double.Parse(rhs_imag.Text));
             Complex multi = new();
-            multi=lhs*rhs;
+            multi=multi_lhs*multi_rhs;
             result_LH.Text = multi.B.ToString();
             result_RH.Text = multi.W.ToString();
 
         }
 
-         private void Button_Click_div(object sender, RoutedEventArgs e)
+        private void Button_Click_div(object sender, RoutedEventArgs e)
          {
-            Complex lhs = new Complex(double.Parse(lhs_real.Text), double.Parse(lhs_imag.Text));
-            Complex rhs = new Complex(double.Parse(rhs_real.Text), double.Parse(rhs_imag.Text));
+            Complex div_lhs = new Complex(double.Parse(lhs_real.Text), double.Parse(lhs_imag.Text));
+            Complex div_rhs = new Complex(double.Parse(rhs_real.Text), double.Parse(rhs_imag.Text));
             Complex div = new();
-            div=lhs/rhs;
+            div=div_lhs/div_rhs;
             result_LH.Text = div.B.ToString();
             result_RH.Text = div.W.ToString();
         }
@@ -74,6 +74,20 @@ namespace Complex_calc
             rhs_real.Text = "0";
         }
 
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 
 

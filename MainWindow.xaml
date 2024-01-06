@@ -5,28 +5,135 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Complex_calc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Background="DarkBlue">
-    <Grid Margin="0,0,0,-80">
+        Title="MainWindow" Height="600" Width="800" Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown">
 
-        <TextBox Name="lhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="70,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" TextChanged="lhs_real_TextChanged"/>
-        <TextBox Name="lhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="226,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" TextChanged="lhs_imag_TextChanged"/>
-        <TextBox x:Name="rhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="506,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="rhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="646,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
-        <TextBox Name="result_LH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="385,366,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
-        <TextBox Name="result_RH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="525,366,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+    <Border CornerRadius="12"
+    Opacity="0.95"
+    BorderThickness="5">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#00ff59" Offset="0"/>
+                <GradientStop Color="#DA3AAE" Offset="0.75"/>
+                <GradientStop Color="#2788EF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
 
-        <TextBlock HorizontalAlignment="Left" Margin="70,106,0,0" TextWrapping="Wrap" Text="Realteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red" />
-        <TextBlock HorizontalAlignment="Left" Margin="226,106,0,0" TextWrapping="Wrap" Text="Imaginärteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
-        <TextBlock HorizontalAlignment="Left" Margin="506,102,0,0" TextWrapping="Wrap" Text="Realteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red" />
-        <TextBlock HorizontalAlignment="Left" Margin="646,104,0,0" TextWrapping="Wrap" Text="Imaginärteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
-        <TextBlock HorizontalAlignment="Left" Margin="385,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"><Run Text="Ergebnis"/><Run Language="de-de" Text=" RE"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="525,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"><Run Language="de-de" Text="Ergebnis IM"/></TextBlock>
 
-        <Button Name="btn_add" Content="Add" HorizontalAlignment="Left" Margin="70,236,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_add" Background="#FFFFF7F0" Grid.ColumnSpan="2"/>
-        <Button Name="btn_sub" Content="Subtract" HorizontalAlignment="Left" Margin="70,300,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_sub" Grid.ColumnSpan="2"/>
-        <Button Name="btn_multi" Content="Multiply" HorizontalAlignment="Left" Margin="70,356,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_multi" Grid.ColumnSpan="2"/>
-        <Button Name="btn_div" Content="Divide" HorizontalAlignment="Left" Margin="70,417,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_div" Grid.ColumnSpan="2"/>
-        <Button Name="AC" Content="AC/C" HorizontalAlignment="Left" Margin="76,185,0,0" VerticalAlignment="Top" Width="50" Height="30" Click="Button_Click_AC"/>
-    </Grid>
+
+        <Grid Margin="0,0,0,-80" RenderTransformOrigin="0.507,0.379">
+            <TextBlock Text="Complex Calculator"
+           FontSize="16"
+           FontWeight="Bold"
+           Foreground="white"
+           FontFamily="Ubuntu"
+           Grid.Column="0"
+           VerticalAlignment="Top"
+           Margin="10,10,0,0"/>
+
+            <TextBox Name="lhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="70,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" />
+            <TextBox Name="lhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="226,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" />
+            <TextBox x:Name="rhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="506,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="rhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="646,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <TextBox Name="result_LH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="385,236,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <TextBox Name="result_RH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="525,236,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+
+
+            <TextBlock HorizontalAlignment="Left" Margin="70,106,0,0" TextWrapping="Wrap" Text="Realteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red" />
+            <TextBlock HorizontalAlignment="Left" Margin="226,106,0,0" TextWrapping="Wrap" Text="Imaginärteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
+            <TextBlock HorizontalAlignment="Left" Margin="506,102,0,0" TextWrapping="Wrap" Text="Realteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red" />
+            <TextBlock HorizontalAlignment="Left" Margin="646,104,0,0" TextWrapping="Wrap" Text="Imaginärteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
+            <TextBlock HorizontalAlignment="Left" Margin="385,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"><Run Text="Ergebnis"/><Run Language="de-de" Text=" RE"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="525,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"><Run Language="de-de" Text="Ergebnis IM"/></TextBlock>
+
+            <Button Name="btn_add" Content="Add" HorizontalAlignment="Left" Margin="70,236,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_add" Background="#FFFFF7F0" Grid.ColumnSpan="2"/>
+            <Button Name="btn_sub" Content="Subtract" HorizontalAlignment="Left" Margin="70,300,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_sub" Grid.ColumnSpan="2"/>
+            <Button Name="btn_multi" Content="Multiply" HorizontalAlignment="Left" Margin="70,356,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_multi" Grid.ColumnSpan="2"/>
+            <Button Name="btn_div" Content="Divide" HorizontalAlignment="Left" Margin="70,417,0,0" VerticalAlignment="Top" Width="169" Height="30" Click="Button_Click_div" Grid.ColumnSpan="2"/>
+            <Button Name="AC" Content="AC/C" HorizontalAlignment="Left" Margin="76,185,0,0" VerticalAlignment="Top" Width="50" Height="30" Click="Button_Click_AC"/>
+            <Button x:Name="btnMinimize"
+        BorderThickness="0"
+        Content="-"
+        FontFamily="Ubuntu"
+        Cursor="Hand"
+        Foreground="White"
+        FontSize="22"
+        FontWeight="Bold"
+        Click="btnMinimize_Click" Margin="326,-317,-326,317">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF7194"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFA0B7"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="26" Height="26" 
+                    CornerRadius="14"
+                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnClose"
+                       BorderThickness="0"
+                       Content="x"
+                       FontFamily="Ubuntu"
+                       Cursor="Hand"
+                       Foreground="White"
+                       FontSize="22"
+                       FontWeight="Normal"
+                       Click="btnClose_Click" Margin="368,-317,-368,317">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#288CEF"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28aeed"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="26" Height="26" 
+                      CornerRadius="14"
+                      Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"/>
+
+                        </Border>
+
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+       
+           
+         
+
+
+        </Grid>
+
+    </Border>
+
+
+
+
 </Window>
