@@ -71,7 +71,7 @@ namespace Complex_calc
             if (mIm >= 0)
                 return $"{mRe} + j{mIm}";
             else
-                return $"{mRe} + j{mIm}";
+                return $"{mRe} - j{mIm}";
         }
 
         public double Re
