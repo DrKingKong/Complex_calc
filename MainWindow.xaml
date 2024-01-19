@@ -32,6 +32,7 @@
 
 
         <Grid Margin="0,0,0,-80" RenderTransformOrigin="0.507,0.379">
+           
             <TextBlock Text="Complex Calculator"
            FontSize="16"
            FontWeight="Bold"
@@ -45,10 +46,9 @@
             <TextBox Name="lhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="226,50,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" />
             <TextBox x:Name="rhs_real" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="506,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
             <TextBox x:Name="rhs_imag" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="646,48,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
-            <TextBox Name="result_LH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="385,236,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
-            <TextBox Name="result_RH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="525,236,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
 
-
+            <TextBlock Name="result_LH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="385,236,0,0" TextWrapping="Wrap" Background="White" />
+            <TextBlock Name="result_RH" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="100" Margin="525,236,0,0" TextWrapping="Wrap" Background="White"/>
             <TextBlock HorizontalAlignment="Left" Margin="70,106,0,0" TextWrapping="Wrap" Text="Realteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red" />
             <TextBlock HorizontalAlignment="Left" Margin="226,106,0,0" TextWrapping="Wrap" Text="Imaginärteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red"/>
             <TextBlock HorizontalAlignment="Left" Margin="506,102,0,0" TextWrapping="Wrap" Text="Realteil" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontWeight="Bold" Background="Beige" Foreground="Red" />
